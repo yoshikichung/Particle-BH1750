@@ -30,13 +30,13 @@
 
 class BH1750 {
   public:
-    BH1750(byte addr = BH1750_I2CADDR);
-    void begin(uint8_t mode);
-    bool write(uint8_t cmd);
-    float read();
+    BH1750 (byte addr = BH1750_I2CADDR);
+    void begin (uint8_t mode);
+    bool write (uint8_t cmd);
+    float read ();
   private:
     byte _addr;
-    void send(uint8_t cmd);
+    void send (uint8_t cmd);
 };
 
 #endif

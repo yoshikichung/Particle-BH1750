@@ -1,21 +1,21 @@
 #include "BH1750.h"
 
-BH1750::BH1750(byte addr) {
+BH1750::BH1750 (byte addr) {
   _addr = addr;
 }
 
-void BH1750::begin(uint8_t mode) {
+void BH1750::begin (uint8_t mode) {
   Wire.begin();
   write(mode);
 }
 
-void BH1750::send(uint8_t cmd) {
+void BH1750::send (uint8_t cmd) {
   Wire.beginTransmission(_addr);
   Wire.write(cmd);
   Wire.endTransmission();
 }
 
-bool BH1750::write(uint8_t cmd) {
+bool BH1750::write (uint8_t cmd) {
   switch (cmd) {
     case BH1750_CONTINUOUS_HIGHRES:
     case BH1750_CONTINUOUS_HIGHRES2:
@@ -43,7 +43,7 @@ bool BH1750::write(uint8_t cmd) {
   }
 }
 
-float BH1750::read() {
+float BH1750::read () {
   uint16_t level;
   float val;
 
